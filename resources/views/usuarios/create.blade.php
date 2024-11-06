@@ -8,6 +8,26 @@
     </div>
 @endif
 
+<script>
+    function generarCodigo() {
+        const numeros = '0123456789';
+        const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let codigo = '';
+
+        for (let i = 0; i < 4; i++) {
+            codigo += numeros.charAt(Math.floor(Math.random() * numeros.length));
+        }
+        for (let i = 0; i < 4; i++) {
+            codigo += letras.charAt(Math.floor(Math.random() * letras.length));
+        }
+
+        return codigo;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('codigo').value = generarCodigo();
+    });
+</script>
 
 <form action="{{ route('usuarios.store') }}" method="POST" class="space-y-4">
     @csrf
@@ -15,7 +35,7 @@
         <div>
             <label for="codigo" class="block text-sm font-medium text-gray-700">Código <i
                     class="fas fa-barcode"></i></label>
-            <input type="text" name="codigo" id="codigo" required
+            <input type="text" name="codigo" id="codigo" required readonly
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
         </div>
 
