@@ -1,18 +1,40 @@
 <x-app-layout>
-    <div class="py-6">
-        <h1 class="text-3xl font-bold text-center mb-4">Lista de Usuarios</h1>
-        <div class="text-right mb-4">
-            <div class="flex justify-end space-x-2">
-                <button onclick="openModal('create')" class="bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                    Agregar Usuario
-                </button>
-                <button onclick="exportarExcel()" class="bg-green-600 text-white font-bold py-2 px-4 rounded">
-                    Exportar a Excel
-                </button>
-            </div>
-        </div>
 
-        <div class="mb-4">
+    <div class="relative flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
+        <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
+          <div class="flex items-center justify-between gap-8 mb-8">
+            <div>
+              <h5
+                class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                Usuarios
+              </h5>
+              <p class="block mt-1 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                Datos generales de clientes
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
+              <button onclick="openModal('create')"
+                class="flex select-none items-center gap-3 rounded-lg bg-blue-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button">
+                </svg>
+                Nuevo Usuario
+              </button>
+
+              <button
+                class="flex select-none items-center gap-3 rounded-lg bg-green-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button">
+                Importar a Excel
+              </button>
+
+              <button
+                class="flex select-none items-center gap-3 rounded-lg bg-green-700 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button">
+                Exportar a Excel
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-4">
             <div class="flex items-center">
                 <input type="text" id="search" placeholder="Buscar..." class="border border-gray-300 rounded-l px-4 py-2 w-1/3" />
                 <button onclick="filterTable()" class="bg-blue-600 text-white font-bold py-2 px-4 rounded-r">
@@ -24,56 +46,154 @@
             </div>
         </div>
 
-        <table class="min-w-full bg-white border border-gray-300" id="usuariosTable">
+        </div>
+        <div class="p-6 px-0 overflow-scroll">
+          <table class="w-full mt-4 text-left table-auto min-w-max" id="usuariosTable">
             <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b">Código</th>
-                    <th class="py-2 px-4 border-b">Nombre</th>
-                    <th class="py-2 px-4 border-b">Cédula</th>
-                    <th class="py-2 px-4 border-b">Código de País</th>
-                    <th class="py-2 px-4 border-b">Teléfono</th>
-                    <th class="py-2 px-4 border-b">Servicio</th>
-                    <th class="py-2 px-4 border-b">Plan</th>
-                    <th class="py-2 px-4 border-b">Sector</th>
-                    <th class="py-2 px-4 border-b">Estación Base</th>
-                    <th class="py-2 px-4 border-b">Tecnología</th>
-                    <th class="py-2 px-4 border-b">Estado</th>
-                    <th class="py-2 px-4 border-b">Fecha de Inicio</th>
-                    <th class="py-2 px-4 border-b">Fecha de Finalización</th>
-                    <th class="py-2 px-4 border-b">Acciones</th>
-                </tr>
+              <tr>
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                    Datos Personales
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                    </svg>
+                  </p>
+                </th>
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                    Servicio
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                    </svg>
+                  </p>
+                </th>
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                    Tecnología
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                    </svg>
+                  </p>
+                </th>
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                    Estado
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                    </svg>
+                  </p>
+                </th>
+
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                    Operaciones
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                      stroke="currentColor" aria-hidden="true" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
+                    </svg>
+                  </p>
+                </th>
+                <th
+                  class="p-4 transition-colors cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50">
+                  <p
+                    class="flex items-center justify-between gap-2 font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                  </p>
+                </th>
+              </tr>
             </thead>
             <tbody>
                 @foreach ($usuarios as $usuario)
-                    <tr>
-                        <td class="py-2 px-4 border-b">{{ $usuario->codigo }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->apellidos }} {{ $usuario->nombres }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->cedula }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->codigo_pais }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->telefono }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->servicio }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->plan }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->sector }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->estacion_base }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->tecnologia }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->estado }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->fecha_inicio }}</td>
-                        <td class="py-2 px-4 border-b">{{ $usuario->fecha_finalizacion }}</td>
-                        <td class="py-2 px-4 border-b">
-                            <button onclick="openModal('show', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Ver más">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="openModal('edit', '{{ $usuario->id }}')" class="text-yellow-600 hover:text-yellow-800 mx-2" title="Editar">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button onclick="confirmDelete('{{ $usuario->nombres }} {{ $usuario->apellidos }}', '{{ route('usuarios.destroy', $usuario) }}')" class="text-red-600 hover:text-red-800">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                @endforeach
+              <tr>
+                <td class="p-4 border-b border-blue-gray-50">
+                  <div class="flex items-center gap-3">
+                    
+                    <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                        <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900"> <b>
+                        {{ $usuario->nombres }} {{ $usuario->apellidos }} <br> 
+                        {{ $usuario->cedula }} <br>
+                        {{ $usuario->codigo_pais }} {{ $usuario->telefono }} <br>
+                        {{ $usuario->codigo }} 
+                    </div>
+                  </div>
+                </td>
+                <td class="p-4 border-b border-blue-gray-50">
+                  <div class="flex flex-col">
+                    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                      {{  $usuario->servicio }} ( {{ $usuario->plan }} )
+                    </p>
+                    
+                  </div>
+                </td>
+                <td class="p-4 border-b border-blue-gray-50">
+                  <div class="w-max">
+                    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                        {{  $usuario->tecnologia }} 
+                      </p>
+                  </div>
+                </td>
+                <td class="p-4 border-b border-blue-gray-50">
+                  <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                   {{ $usuario->estado }}
+                  </p>
+                </td>
+                <td class="p-4 border-b border-blue-gray-50">
+
+                  <button onclick="openModal('show', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Ver más">
+                    <i class="fas fa-eye"></i>
+                    </button>
+                    <button onclick="openModal('edit', '{{ $usuario->id }}')" class="text-yellow-600 hover:text-yellow-800 mx-2" title="Editar">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button onclick="confirmDelete('{{ $usuario->nombres }} {{ $usuario->apellidos }}', '{{ route('usuarios.destroy', $usuario) }}')" class="text-red-600 hover:text-red-800">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
+                </td>
+              </tr>
+              @endforeach
             </tbody>
-        </table>
+          </table>
+        </div>
+        <div class="flex items-center justify-between p-4 border-t border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            Page 1 of 10
+          </p>
+          <div class="flex gap-2">
+            <button
+              class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              Previous
+            </button>
+            <button
+              class="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
 
         <div id="myModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
             <div class="bg-white rounded-lg w-full max-w-4xl p-6">
@@ -198,6 +318,10 @@
             }
 
             function exportarExcel() {
+                window.location.href = '/';
+            }
+
+            function inportarExcel() {
                 window.location.href = '/';
             }
 
