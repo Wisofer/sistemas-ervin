@@ -82,6 +82,16 @@
                     <button onclick="closeModal()" class="text-gray-500">&times;</button>
                 </div>
                 <div id="modalContent" class="py-2">
+                    @if ($errors->any())
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                            <strong class="font-bold">¡Error!</strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <div class="flex justify-end ">
                     <button onclick="closeModal()" class="mr-3 bg-gray-300 px-4 py-2 rounded">Cerrar</button>
