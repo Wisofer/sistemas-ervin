@@ -24,10 +24,11 @@
         return codigo;
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('codigo').value = generarCodigo();
-    });
+    //document.addEventListener('DOMContentLoaded', function() {
+    //    document.getElementById('codigo').value = generarCodigo();
+    //});
 </script>
+
 
 <form action="{{ route('usuarios.store') }}" method="POST" class="space-y-4">
     @csrf
@@ -35,7 +36,7 @@
         <div>
             <label for="codigo" class="block text-sm font-medium text-gray-700">Código <i
                     class="fas fa-barcode"></i></label>
-            <input type="text" name="codigo" id="codigo" required readonly
+            <input type="text" name="codigo" id="codigo" placeholder="0000ABCD" required 
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
         </div>
 
@@ -149,7 +150,7 @@
         </div>
 
         <div>
-            <label for="fecha_finalizacion" class="block text-sm font-medium text-gray-700">Fecha de Finalización <i
+            <label for="fecha_finalizacion" class="block text-sm font-medium text-gray-70" >Fecha de Finalización <i
                     class="fas fa-calendar-alt"></i></label>
             <input type="date" name="fecha_finalizacion" id="fecha_finalizacion" required
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
