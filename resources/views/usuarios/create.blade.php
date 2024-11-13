@@ -64,8 +64,12 @@
         <div>
             <label for="codigo_pais" class="block text-sm font-medium text-gray-700">Código de País <i
                     class="fas fa-globe"></i></label>
-            <input type="text" name="codigo_pais" id="codigo_pais" required
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <select name="codigo_pais" id="codigo_pais" required
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        <option value="505">+505</option>    
+                        <option value="1">+1</option>
+                        <option value="506">+506</option>
+                </select>
         </div>
 
         <div>
@@ -76,10 +80,11 @@
         </div>
 
         <div>
-            <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio <i
-                    class="fas fa-concierge-bell"></i></label>
-            <input type="text" name="servicio" id="servicio" required
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio <i class="fas fa-concierge-bell"></i></label>
+                <select name="servicio " id="servicio" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        <option value="IR"> Internet Residencial</option>
+                        <option value="RER">Radio Enlace Redisencial</option>
+                </select>
         </div>
 
         <div>
@@ -96,10 +101,25 @@
         </div>
 
         <div>
-            <label for="sector" class="block text-sm font-medium text-gray-700">Sector <i
-                    class="fas fa-industry"></i></label>
-            <input type="text" name="sector" id="sector" required
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+            <label for="sector" class="block text-sm font-medium text-gray-700">Sector <i class="fas fa-industry"></i></label>
+                    <select name="sector" id="sector" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        <option value="LP00">LP00</option>
+                        <option value="LP01">LP01</option>
+                        <option value="LP02">LP02</option>
+                        <option value="LP03">LP03</option>
+                        <option value="AMAT00">AMAT00</option>
+                        <option value="AMAT01">AMAT01</option>
+                        <option value="AMAT02">AMAT02</option>
+                        <option value="AMAT03">AMAT03</option>
+                        <option value="SB01">SB01</option>
+                        <option value="SB02">SB02</option>
+                        <option value="ELC00">ELC00</option>
+                        <option value="BDC00">BDC00</option>
+                        <option value="LF00">LF00</option>
+                        <option value="HATOII">HATOII</option>
+                        <option value="LAC00">LAC00</option>
+                        <option value="LACO00">LACO00</option>
+                </select>
         </div>
 
         <div>
