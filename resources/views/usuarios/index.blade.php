@@ -168,7 +168,7 @@
                         <i class="fas fa-edit"></i>
                   </button>
                   
-                  <button onclick="openModal('show', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Facturar">
+                  <button onclick="openModal('fact', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Facturar">
                       <i class="fas fa-file-invoice-dollar"></i>
                   </button>
                   
@@ -264,10 +264,10 @@
                     } else if (action === 'edit') {
                         url = '/usuarios/' + id + '/edit';
                         document.getElementById('modalTitle').innerText = 'Editar Usuario';
-                    }// else if (action === 'fact') { 
-                       // url = '/usuarios/' + id + '/fact'; 
-                        //document.getElementById('modalTitle').innerText = 'Facturación';
-                  //  }
+                    } else if (action === 'fact') { 
+                        url = '/usuarios/' + id + '/fact'; 
+                        document.getElementById('modalTitle').innerText = 'Facturación';
+                    }
 
                     fetch(url)
                         .then(response => response.text())

@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/usuarios/{usuario}', [UsuarioController::class, 'show'])->name('usuarios.show'); // Definir la ruta para mostrar un usuario
     Route::get('/usuarios/{usuario}/edit', [UsuarioController::class, 'edit'])->name('usuarios.edit'); // Definir la ruta para editar un usuario
     Route::put('/usuarios/{usuario}', [UsuarioController::class, 'update'])->name('usuarios.update'); // Definir la ruta para actualizar un usuario
-    //Route::get('usuarios/{usuario}', [UsuarioController::class, 'fact']) -> name('usuarios.fact'); // Defenir la ruta para facturar usuarios
+    Route::get('usuarios/fact', [UsuarioController::class, 'fact']) -> name('usuarios.fact'); // Defenir la ruta para facturar usuarios
     Route::delete('/usuarios/{usuario}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy'); // Definir la ruta para eliminar un usuario
 });
 

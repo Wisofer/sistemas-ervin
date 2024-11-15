@@ -78,7 +78,7 @@ class UsuarioController extends Controller
 
     public function fact(Request $request, Usuario $usuario) 
     {
-
+        return redirect()->route('usuarios.index')->with('success', 'Usuario creado exitosamente.');
     }
 
     public function destroy(Usuario $usuario)
