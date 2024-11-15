@@ -162,13 +162,19 @@
 
                   <button onclick="openModal('show', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Ver más">
                     <i class="fas fa-eye"></i>
-                    </button>
-                    <button onclick="openModal('edit', '{{ $usuario->id }}')" class="text-yellow-600 hover:text-yellow-800 mx-2" title="Editar">
+                  </button>
+                  
+                  <button onclick="openModal('edit', '{{ $usuario->id }}')" class="text-yellow-600 hover:text-yellow-800 mx-2" title="Editar">
                         <i class="fas fa-edit"></i>
-                    </button>
-                    <button onclick="confirmDelete('{{ $usuario->nombres }} {{ $usuario->apellidos }}', '{{ route('usuarios.destroy', $usuario) }}')" class="text-red-600 hover:text-red-800">
-                        <i class="fas fa-trash"></i>
-                    </button>
+                  </button>
+                  
+                  <button onclick="openModal('show', '{{ $usuario->id }}')" class="text-blue-600 hover:text-blue-800" title="Facturar">
+                      <i class="fas fa-file-invoice-dollar"></i>
+                  </button>
+                  
+                  <button onclick="confirmDelete('{{ $usuario->nombres }} {{ $usuario->apellidos }}', '{{ route('usuarios.destroy', $usuario) }}')" class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                  </button>
 
                 </td>
               </tr>
@@ -268,7 +274,10 @@
                     } else if (action === 'edit') {
                         url = '/usuarios/' + id + '/edit';
                         document.getElementById('modalTitle').innerText = 'Editar Usuario';
-                    }
+                    }// else if (action === 'fact') { 
+                       // url = '/usuarios/' + id + '/fact'; 
+                        //document.getElementById('modalTitle').innerText = 'Facturación';
+                  //  }
 
                     fetch(url)
                         .then(response => response.text())
