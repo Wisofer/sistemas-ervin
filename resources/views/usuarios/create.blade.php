@@ -67,11 +67,12 @@
                     class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
             </div>
 
-            <div>
-                <label for="codigo_pais" class="block text-sm font-medium text-gray-700">Código de País <i class="fas fa-globe"></i></label>
-                <input type="text" name="codigo_pais" id="codigo_pais" required
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-            </div>
+        <div>
+            <label for="codigo_pais" class="block text-sm font-medium text-gray-700">Código de País <i
+                    class="fas fa-globe"></i></label>
+            <input type="text" name="codigo_pais" id="codigo_pais" required
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+        </div>
 
             <div>
                 <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono <i class="fas fa-phone"></i></label>
@@ -79,11 +80,12 @@
                     class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
             </div>
 
-            <div>
-                <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio <i class="fas fa-concierge-bell"></i></label>
-                <input type="text" name="servicio" id="servicio" required
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-            </div>
+        <div>
+            <label for="servicio" class="block text-sm font-medium text-gray-700">Servicio <i
+                    class="fas fa-concierge-bell"></i></label>
+            <input type="text" name="servicio" id="servicio" required
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+        </div>
 
             <div>
                 <label for="plan" class="block text-sm font-medium text-gray-700">Plan <i class="fas fa-list-alt"></i></label>
@@ -97,11 +99,12 @@
                 </select>
             </div>
 
-            <div>
-                <label for="sector" class="block text-sm font-medium text-gray-700">Sector <i class="fas fa-industry"></i></label>
-                <input type="text" name="sector" id="sector" required
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-            </div>
+        <div>
+            <label for="sector" class="block text-sm font-medium text-gray-700">Sector <i
+                    class="fas fa-industry"></i></label>
+            <input type="text" name="sector" id="sector" required
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+        </div>
 
             <div>
                 <label for="estacion_base" class="block text-sm font-medium text-gray-700">Estación Base <i class="fas fa-signal"></i></label>
