@@ -284,6 +284,10 @@
 
             function closeModal() {
                 document.getElementById('myModal').classList.add('hidden');
+                document.getElementById('modalContent').innerHTML = ''; 
+                // Aqui es donde se limpiara el contenido del modal,
+                // Para que ya no habra nada en el cache y 
+                //cada vez que el modal se habra estara limpio :v
             }
 
             function confirmDelete(nombreCompleto, url) {
@@ -351,6 +355,25 @@
                 document.getElementById('search').value = '';
                 filterTable();
             }
+
+            // Nueva función para abrir el modal de creación sin esperar
+            function openCreateModal() {
+                document.getElementById('loader').classList.remove('hidden');
+                fetch('/usuarios/create')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('modalContent').innerHTML = data;
+                        document.getElementById('myModal').classList.remove('hidden');
+                        document.getElementById('modalTitle').innerText = 'Formulario de Usuarios';
+                    })
+                    .catch(error => console.error('Error al cargar el contenido del modal:', error))
+                    .finally(() => {
+                        document.getElementById('loader').classList.add('hidden');
+                    });
+            }
+
+            // Reemplazar el evento onclick del botón de nuevo usuario
+            document.querySelector('button[onclick="openModal(\'create\')"]').onclick = openCreateModal;
         </script>
     </div>
 </x-app-layout>
