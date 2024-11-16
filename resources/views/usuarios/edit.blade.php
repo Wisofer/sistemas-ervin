@@ -26,10 +26,10 @@
             
             <div>
                 <label for="codigo_pais" class="block text-sm font-medium text-gray-700">Código de País <i class="fas fa-globe"></i></label>
-                <select name="codigo_pais" id="codigo_pais" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                    <option value="505" {{ $usuario->codigo_pais == '505' ? 'selected' : '' }}>505</option>
-                    <option value="506" {{ $usuario->codigo_pais == '506' ? 'selected' : '' }}>506</option>
-                    <option value="1" {{ $usuario->codigo_pais == '1' ? 'selected' : '' }}>1</option>
+                <select name="codigo_pais" id="codigo_pais" value="{{ $usuario -> telefono }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <option value="505">505</option>
+                    <option value="506">506</option>
+                    <option value="1">1</option>
                 </select>
             </div>
             
@@ -43,7 +43,7 @@
                 <select name="servicio " id="servicio" value="{{ $usuario->servicio }}" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                     <option value="IR"> Internet Residencial</option>
                     <option value="RER"> Radio Enlace Redisencial </option>
-            </select>
+                </select>
             </div>
             
             <div>
